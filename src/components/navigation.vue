@@ -1,6 +1,7 @@
 <template>
-  <view :style="{'height':navHeight+'rpx', 'padding-top':barHeight+'rpx', 'color': textColor}" id='navigation' @tap.stop='goBack'>
-    <view class='iconfont icon-bar-return'></view>
+  <view :style="{'height':navHeight+'rpx', 'padding-top':barHeight+'rpx', 'color': textColor, 'background-color':bgColor}" id='navigation'>
+    <view class='iconfont icon-bar-return' v-if='isTabBar'  @tap.stop='goBack'></view>
+    <view v-else></view>
     <text>{{text}}</text>
     <view></view>
   </view>
@@ -16,6 +17,14 @@ export default {
     },
     textColor: {
       default: '#333',
+      type: String
+    },
+    isTabBar: {
+      default: true,
+      type: Boolean
+    },
+    bgColor: {
+      default: '#ececec',
       type: String
     }
   },
@@ -54,6 +63,9 @@ export default {
         padding-left: 30rpx;
         box-sizing: border-box;
        
+      }
+      &:last-child{
+        padding-right: 30rpx;
       }
     }
     & > text {

@@ -22,8 +22,8 @@ export default {
 }
 </script>
 
-<style>
-@import '../static/font/iconfont.css';
+<style style='less'>
+@import '../static/font/iconfont.less';
 @import 'style/base.less';
-@import 'style/ripples.min.wxss';
+@import 'style/ripples.min.less';
 </style>

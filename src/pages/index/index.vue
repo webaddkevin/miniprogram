@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <navigition></navigition>
+    <navigition :isTabBar='isTabBar' text='首页'></navigition>
     <view class="userinfo">
       <view :animation="animationData" class="userinfo-avatar">
         <open-data type="userAvatarUrl"></open-data>
@@ -17,6 +17,7 @@ import Navigition from '@/components/navigation'
 export default {
   data () {
     return {
+      isTabBar: false,
       animationData: {}
     }
   },
